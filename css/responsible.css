@@ -1,0 +1,194 @@
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .header-search {
+        width: 300px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    :root {
+        --sidebar-width: 0px;
+    }
+
+
+    /* Sidebar */
+
+    .sidebar {
+        display: none;
+    }
+
+
+    /* Main */
+
+    .main-content {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+
+    /* Header */
+
+    .top-header {
+        padding: 0 15px;
+
+        height: 65px;
+    }
+
+    .mobile-menu {
+        display: block;
+
+        font-size: 20px;
+    }
+
+    .header-search {
+        display: none;
+    }
+
+    .profile-info {
+        display: none;
+    }
+
+
+    /* Content */
+
+    .content {
+        padding: 22px 15px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .page-heading h2 {
+        font-size: 24px;
+    }
+
+    .upload-btn {
+        width: 100%;
+    }
+
+
+    /* Statistics */
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 14px;
+
+        gap: 10px;
+    }
+
+    .stat-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .stat-card strong {
+        font-size: 19px;
+    }
+
+
+    /* Toolbar */
+
+    .documents-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    .toolbar-left {
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+    }
+
+    .sort-select {
+        width: 100%;
+    }
+
+
+    /* Documents */
+
+    .documents-card {
+        border-radius: 12px;
+    }
+
+    .document-row {
+        padding: 13px;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .file-date {
+        display: none;
+    }
+
+    .file-actions {
+        width: 100%;
+
+        padding-left: 55px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+
+    .login-box {
+        padding: 30px 22px;
+
+        border-radius: 18px;
+    }
+
+    .login-box h1 {
+        font-size: 26px;
+    }
+
+    .stats-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .stat-card {
+        justify-content: flex-start;
+    }
+
+}

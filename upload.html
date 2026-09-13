@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Upload Document | Document Vault</title>
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/responsive.css"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         LOGO STYLE
+    ====================================================== -->
+
+    <style>
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .site-logo img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .site-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .site-logo-title {
+            font-size: 17px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .site-logo-subtitle {
+            font-size: 10px;
+            margin-top: 3px;
+            opacity: 0.65;
+            white-space: nowrap;
+        }
+
+        .sidebar-brand {
+            padding: 18px 15px;
+        }
+
+        .upload-page {
+            padding-bottom: 50px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <!-- ================= LOGO ================= -->
+
+        <div class="sidebar-brand">
+
+            <a
+                href="dashboard.html"
+                class="site-logo"
+            >
+
+                <img
+                    src="Assets/logo.png"
+                    alt="Document Vault Logo"
+                >
+
+                <div class="site-logo-text">
+
+                    <div class="site-logo-title">
+                        Document Vault
+                    </div>
+
+                    <div class="site-logo-subtitle">
+                        Secure Documents
+                    </div>
+
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ▦
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- All Documents -->
+
+            <a
+                href="document.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    📁
+                </span>
+
+                <span>
+                    All Documents
+                </span>
+
+            </a>
+
+
+            <!-- Images -->
+
+            <a
+                href="document.html?type=image"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🖼️
+                </span>
+
+                <span>
+                    Images
+                </span>
+
+            </a>
+
+
+            <!-- PDFs -->
+
+            <a
+                href="document.html?type=pdf"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    📄
+                </span>
+
+                <span>
+                    PDFs
+                </span>
+
+            </a>
+
+
+            <!-- Excel -->
+
+            <a
+                href="document.html?type=excel"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    📊
+                </span>
+
+                <span>
+                    Excel
+                </span>
+
+            </a>
+
+
+            <!-- Word -->
+
+            <a
+                href="document.html?type=word"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    📝
+                </span>
+
+                <span>
+                    Word
+                </span>
+
+            </a>
+
+
+            <!-- CSV -->
+
+            <a
+                href="document.html?type=csv"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    📋
+                </span>
+
+                <span>
+                    CSV
+                </span>
+
+            </a>
+
+
+            <!-- Favorites -->
+
+            <a
+                href="document.html?type=favorites"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⭐
+                </span>
+
+                <span>
+                    Favorites
+                </span>
+
+            </a>
+
+
+            <!-- Trash -->
+
+            <a
+                href="document.html?type=trash"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🗑️
+                </span>
+
+                <span>
+                    Trash
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- ================= BOTTOM ================= -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- Settings -->
+
+            <a
+                href="#"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙️
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- Logout -->
+
+            <a
+                href="index.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    🚪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="top-header">
+
+
+            <!-- Mobile Menu -->
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+            >
+
+                ☰
+
+            </button>
+
+
+            <!-- Search -->
+
+            <div class="header-search">
+
+                <span>
+                    🔎
+                </span>
+
+                <input
+                    type="search"
+                    id="uploadSearch"
+                    placeholder="Search documents..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- Header Right -->
+
+            <div class="header-right">
+
+
+                <!-- Notification -->
+
+                <button
+                    class="notification-btn"
+                    type="button"
+                    title="Notifications"
+                >
+
+                    🔔
+
+                    <span
+                        class="notification-dot"
+                    ></span>
+
+                </button>
+
+
+                <!-- User -->
+
+                <div class="user-profile">
+
+
+                    <div class="user-avatar">
+                        S
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <strong>
+                            User
+                        </strong>
+
+                        <small>
+                            User
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+        ================================================== -->
+
+        <section class="page-content upload-page">
+
+
+            <!-- ================= PAGE HEADER ================= -->
+
+            <div class="page-header">
+
+
+                <div>
+
+                    <h1>
+                        Upload Document
+                    </h1>
+
+                    <p>
+                        Add a new document to your Document Vault.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="dashboard.html"
+                    class="back-btn"
+                >
+
+                    ← Back to Dashboard
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 UPLOAD CARD
+            ================================================== -->
+
+            <div class="upload-card">
+
+
+                <!-- ================= CARD HEADER ================= -->
+
+                <div class="upload-card-header">
+
+                    <div>
+
+                        <h2>
+                            Upload File
+                        </h2>
+
+                        <p>
+                            Select one or more documents from your computer.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     DROP ZONE
+                ================================================== -->
+
+                <div
+                    class="upload-dropzone"
+                    id="dropZone"
+                >
+
+
+                    <!-- Upload Icon -->
+
+                    <div class="upload-icon">
+                        ⬆
+                    </div>
+
+
+                    <h3>
+                        Drag & Drop your files here
+                    </h3>
+
+
+                    <p>
+                        or
+                    </p>
+
+
+                    <!-- Browse Button -->
+
+                    <label
+                        for="fileInput"
+                        class="browse-btn"
+                    >
+
+                        Browse Files
+
+                    </label>
+
+
+                    <!-- File Input -->
+
+                    <input
+                        type="file"
+                        id="fileInput"
+                        hidden
+                        multiple
+                        accept=".pdf,.jpg,.jpeg,.png,.gif,.webp,.doc,.docx,.xls,.xlsx,.csv,.txt"
+                    >
+
+
+                    <small>
+                        Supported: PDF, JPG, JPEG, PNG, GIF,
+                        WEBP, DOC, DOCX, XLS, XLSX, CSV, TXT
+                    </small>
+
+
+                    <small>
+                        Maximum file size: 100 MB per file
+                    </small>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FILE PREVIEW
+                ================================================== -->
+
+                <div
+                    class="selected-file"
+                    id="selectedFile"
+                    style="display:none;"
+                >
+
+
+                    <div class="selected-file-left">
+
+
+                        <!-- File Icon -->
+
+                        <div
+                            class="file-type-icon"
+                            id="fileTypeIcon"
+                        >
+                            FILE
+                        </div>
+
+
+                        <!-- File Information -->
+
+                        <div class="selected-file-info">
+
+                            <strong id="fileName">
+                                document.pdf
+                            </strong>
+
+                            <span id="fileSize">
+                                0 KB
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Remove -->
+
+                    <button
+                        type="button"
+                        class="remove-file"
+                        id="removeFile"
+                        title="Remove file"
+                    >
+
+                        ×
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     MULTIPLE FILE PREVIEW
+                ================================================== -->
+
+                <div
+                    id="filePreview"
+                    class="file-preview"
+                ></div>
+
+
+
+                <!-- =================================================
+                     DOCUMENT DETAILS
+                ================================================== -->
+
+                <div class="document-details">
+
+
+                    <!-- Section Title -->
+
+                    <div class="section-title">
+
+                        <h2>
+                            Document Details
+                        </h2>
+
+                        <p>
+                            Add some information about your document.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Form Grid -->
+
+                    <div class="form-grid">
+
+
+                        <!-- ================= DOCUMENT NAME ================= -->
+
+                        <div class="form-group">
+
+                            <label for="documentName">
+
+                                Document Name
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="documentName"
+                                placeholder="Enter document name"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+
+                        <!-- ================= CATEGORY ================= -->
+
+                        <div class="form-group">
+
+                            <label for="category">
+
+                                Category
+
+                            </label>
+
+
+                            <select id="category">
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="personal">
+                                    Personal
+                                </option>
+
+                                <option value="work">
+                                    Work
+                                </option>
+
+                                <option value="education">
+                                    Education
+                                </option>
+
+                                <option value="financial">
+                                    Financial
+                                </option>
+
+                                <option value="legal">
+                                    Legal
+                                </option>
+
+                                <option value="medical">
+                                    Medical
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- ================= DESCRIPTION ================= -->
+
+                        <div
+                            class="form-group full-width"
+                        >
+
+                            <label for="description">
+
+                                Description
+
+                            </label>
+
+
+                            <textarea
+                                id="description"
+                                rows="5"
+                                placeholder="Write a short description about this document..."
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- ================= TAGS ================= -->
+
+                        <div
+                            class="form-group full-width"
+                        >
+
+                            <label for="tags">
+
+                                Tags
+
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="tags"
+                                placeholder="Example: passport, important, personal"
+                                autocomplete="off"
+                            >
+
+
+                            <small class="input-help">
+
+                                Separate multiple tags with commas.
+
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     FAVORITE OPTION
+                ================================================== -->
+
+                <div class="upload-options">
+
+
+                    <label
+                        class="checkbox-option"
+                    >
+
+                        <input
+                            type="checkbox"
+                            id="favorite"
+                        >
+
+
+                        <span>
+                            Add to Favorites
+                        </span>
+
+                    </label>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     UPLOAD PROGRESS
+                ================================================== -->
+
+                <div
+                    class="upload-progress"
+                    id="uploadProgress"
+                    style="display:none;"
+                >
+
+
+                    <div class="progress-info">
+
+                        <span>
+                            Uploading...
+                        </span>
+
+                        <span id="progressText">
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-bar"
+                            id="progressBar"
+                            style="width:0%;"
+                        ></div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ERROR MESSAGE
+                ================================================== -->
+
+                <div
+                    class="upload-error"
+                    id="uploadError"
+                    style="display:none;"
+                ></div>
+
+
+
+                <!-- =================================================
+                     ACTIONS
+                ================================================== -->
+
+                <div class="upload-actions">
+
+
+                    <!-- Cancel -->
+
+                    <a
+                        href="dashboard.html"
+                        class="cancel-btn"
+                    >
+
+                        Cancel
+
+                    </a>
+
+
+                    <!-- Upload -->
+
+                    <button
+                        type="button"
+                        class="upload-submit-btn"
+                        id="uploadButton"
+                        type="button"
+                    >
+
+                        ⬆ Upload Document
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+
+
+
+
+
+<!-- =========================================================
+     MOBILE SIDEBAR SCRIPT
+========================================================= -->
+
+<script>
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+
+    if (mobileMenu && sidebar) {
+
+        mobileMenu.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.toggle(
+                    "mobile-open"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* Close sidebar when clicking outside */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                window.innerWidth <= 768 &&
+                sidebar &&
+                mobileMenu &&
+                !sidebar.contains(event.target) &&
+                !mobileMenu.contains(event.target)
+            ) {
+
+                sidebar.classList.remove(
+                    "mobile-open"
+                );
+
+            }
+
+        }
+    );
+
+</script>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/firebase-data.js"></script>
+<script src="js/upload.js"></script>
+</body>
+
+</html>

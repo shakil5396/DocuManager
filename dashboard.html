@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard | Document Vault</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="icon" href="Assets/logo.png"></head><body>
+<div class="app-container"><aside class="sidebar" id="sidebar"><div class="sidebar-brand"><a href="dashboard.html" class="site-logo"><img src="Assets/logo.png"><div class="site-logo-text"><div class="site-logo-title">Document Vault</div><div class="site-logo-subtitle">Secure Documents</div></div></a></div><nav class="sidebar-nav"><a class="nav-item active" href="dashboard.html">▦ <span>Dashboard</span></a><a class="nav-item" href="document.html">📁 <span>All Documents</span></a><a class="nav-item" href="document.html?type=image">🖼️ <span>Images</span></a><a class="nav-item" href="document.html?type=pdf">📄 <span>PDFs</span></a><a class="nav-item" href="document.html?type=excel">📊 <span>Excel</span></a><a class="nav-item" href="document.html?type=word">📝 <span>Word</span></a><a class="nav-item" href="document.html?type=csv">📋 <span>CSV</span></a><a class="nav-item" href="document.html?type=favorites">⭐ <span>Favorites</span></a><a class="nav-item" href="document.html?type=trash">🗑️ <span>Trash</span></a></nav><div class="sidebar-bottom"><a class="nav-item" href="upload.html">＋ <span>Upload</span></a><a class="nav-item" href="#" id="logoutLink">🚪 <span>Logout</span></a></div></aside>
+<main class="main-content"><header class="top-header"><button class="mobile-menu" id="mobileMenu">☰</button><div class="header-search"><span>🔎</span><input id="dashboardSearch" type="search" placeholder="Search documents..."></div><div class="header-right"><div class="user-profile"><div class="user-avatar" id="userAvatar">U</div><div class="user-info"><strong id="userName">User</strong><small id="userRole">User</small></div></div></div></header>
+<section class="page-content"><div class="page-header"><div><h1>My Documents</h1><p>Manage and organize your files easily.</p></div><a href="upload.html" class="upload-btn">+ Upload Document</a></div>
+<div class="stats-grid"><div class="stat-card"><div class="stat-icon folder">📁</div><div><span>Total Documents</span><strong id="totalDocuments">0</strong></div></div><div class="stat-card"><div class="stat-icon purple">💾</div><div><span>Storage Used</span><strong id="storageUsed">0 Bytes</strong></div></div><div class="stat-card"><div class="stat-icon image">🖼️</div><div><span>Images</span><strong id="totalImages">0</strong></div></div><div class="stat-card"><div class="stat-icon pdf">📄</div><div><span>PDFs</span><strong id="totalPDFs">0</strong></div></div></div>
+<div class="documents-toolbar"><div class="toolbar-left"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="pdf">PDF</button><button class="filter-btn" data-filter="image">Images</button><button class="filter-btn" data-filter="excel">Excel</button><button class="filter-btn" data-filter="word">Word</button><button class="filter-btn" data-filter="csv">CSV</button></div><select class="sort-select" id="sortDocuments"><option value="recent">Recently Added</option><option value="oldest">Oldest First</option><option value="name">Name</option><option value="size">File Size</option></select></div>
+<div class="documents-card"><div class="documents-header"><h3>Recent Documents</h3><a href="document.html">View All</a></div><div id="documentList" class="document-list"><div class="empty-state" id="emptyState"><h3>No documents yet</h3><p>Upload your first document to see it here.</p><a class="upload-btn" href="upload.html">Upload Document</a></div></div></div></section></main></div>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/auth.js"></script><script src="js/firebase-data.js"></script><script src="js/dashboard.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("upload") === "success") {
+    const box = document.createElement("div");
+    box.textContent = "✓ Document uploaded successfully!";
+    box.style.cssText =
+      "position:fixed;top:20px;right:20px;z-index:9999;" +
+      "padding:13px 18px;border-radius:10px;background:#eaf8ef;" +
+      "color:#176b36;border:1px solid #bfe7ca;font-weight:600;" +
+      "box-shadow:0 8px 24px rgba(0,0,0,.12);";
+    document.body.appendChild(box);
+    setTimeout(() => box.remove(), 3500);
+    history.replaceState({}, "", "dashboard.html");
+  }
+});
+</script>
+
+</body></html>

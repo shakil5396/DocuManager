@@ -1,0 +1,21 @@
+DOCUMANAGER — FIREBASE EDITION
+==============================
+
+1. Open js/firebase-config.js
+2. Paste your Firebase Web App config.
+3. Firebase Console:
+   - Authentication > Sign-in method > Email/Password = ON
+   - Firestore Database = create database
+   - Storage = create bucket
+4. Deploy firestore.rules and storage.rules.
+5. Add your website hostname under Authentication > Settings > Authorized domains.
+6. Publish the folder to GitHub Pages or Firebase Hosting.
+
+This version does NOT use Node.js, Express, SQLite, Render, or /api routes.
+Login/Register = Firebase Authentication.
+Documents = Firestore.
+Files = Firebase Storage.
+
+IMPORTANT:
+- Never put a Firebase service-account JSON/private key in this project.
+- Cloud Storage for Firebase currently requires the Blaze pay-as-you-go plan.

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Vault</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="icon" href="Assets/logo.png">
+<style>
+.auth-error{display:none;margin:0 0 16px;padding:11px 13px;border-radius:10px;background:#fee2e2;color:#991b1b;font-size:13px;line-height:1.4}
+.auth-toggle{display:block;width:100%;margin-top:16px;padding:12px;border:1px solid #dbe2ef;border-radius:10px;background:#fff;color:#315efb;font-weight:700;cursor:pointer}
+.auth-toggle:hover{background:#f6f8ff}
+.auth-note{text-align:center;color:#64748b;font-size:12px;margin:16px 0 0}
+.password-help{font-size:11px;color:#64748b;margin-top:-10px;margin-bottom:15px}
+</style>
+</head>
+<body>
+<section class="login-page">
+<div class="login-box">
+<div class="brand-logo"><img src="Assets/logo.png" alt="Document Vault Logo"></div>
+<h1>Document Vault</h1>
+<p class="login-subtitle">Securely manage all your documents in one place.</p>
+
+<div id="authError" class="auth-error" role="alert"></div>
+
+<form id="loginForm" novalidate>
+<div class="input-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="Enter your email" autocomplete="email" required></div>
+<div class="input-group"><label for="password">Password</label><input type="password" id="password" placeholder="Enter your password" autocomplete="current-password" required></div>
+<div class="login-options">
+<label class="remember"><input type="checkbox" id="rememberMe"> Remember me</label>
+</div>
+<button type="submit" class="login-btn">Login</button>
+</form>
+
+<form id="registerForm" novalidate style="display:none">
+<div class="input-group"><label for="registerName">Full Name</label><input type="text" id="registerName" placeholder="Enter your full name" autocomplete="name" required></div>
+<div class="input-group"><label for="registerEmail">Email Address</label><input type="email" id="registerEmail" placeholder="Enter your email" autocomplete="email" required></div>
+<div class="input-group"><label for="registerPassword">Password</label><input type="password" id="registerPassword" placeholder="Minimum 6 characters" autocomplete="new-password" required></div>
+<div class="password-help">Password must contain at least 6 characters.</div>
+<div class="input-group"><label for="registerConfirm">Confirm Password</label><input type="password" id="registerConfirm" placeholder="Re-enter your password" autocomplete="new-password" required></div>
+<button type="submit" class="login-btn">Create Account</button>
+</form>
+
+<button type="button" id="toggleRegister" class="auth-toggle">Create an account</button>
+<p class="auth-note">Your documents. Your control.</p>
+</div>
+</section>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
